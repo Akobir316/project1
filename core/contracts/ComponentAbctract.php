@@ -1,7 +1,10 @@
 <?php
 
 namespace core\contracts;
-class ComponentAbctract
+class ComponentAbctract implements BootstrapInterface
 {
+    public function bootstrap()
+    {
 
+    }
 }
