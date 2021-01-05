@@ -7,6 +7,7 @@ use core\contracts\{BootstrapInterface,ContainerInterface,RunnableInterface};
 class Application implements BootstrapInterface, ContainerInterface,RunnableInterface
 {
     private static $instance;
+
     public static function getInstance(){
         if(self::$instance === null){
             self::$instance = new self();
@@ -15,7 +16,7 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
     }
     public function run()
     {
-        echo "hello world";
+        Router::route();
     }
 
     public function bootstrap()
