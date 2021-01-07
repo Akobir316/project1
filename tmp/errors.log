@@ -1,0 +1,4 @@
+[2021-01-08 00:32:14] Текст ошибки: Контроллер app\controllers\ProductController не найден | Файл: /home/akobir/www/project1.loc/core/Router.php | Строка: 33
+=================
+[2021-01-08 00:32:57] Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: /home/akobir/www/project1.loc/core/Router.php | Строка: 30
+=================
