@@ -1,6 +1,6 @@
 <?php
 namespace core\contracts;
 interface ContainerInterface{
-    public function get();
-    public function has();
+    public function get($name);
+    public function has($name);
 }

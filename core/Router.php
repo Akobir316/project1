@@ -3,6 +3,8 @@
 
 namespace core;
 use core\contracts\ComponentAbctract;
+
+
 class Router extends ComponentAbctract
 {
     protected static $routes = [];
@@ -13,24 +15,26 @@ class Router extends ComponentAbctract
     }
     public static function route(){
         $url = trim($_SERVER['REQUEST_URI'], '/');
-
+        $url = self::removeQueryString($url);
         if(self::matchRoute($url)){
             $controller = "app\controllers\\".self::$route['controller']."Controller";
             if(class_exists($controller)){
                 $controllerObj = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action'])."Action";
                 if(method_exists($controllerObj, $action)){
-                    $controllerObj->$action();
+
+                    return function() use ($controllerObj, $action){
+                        $controllerObj->$action();
+                    };
                 }else{
-                    //Исключение(данный метод в контроллере не найден)
+                    throw new \Exception("Метод $controller::$action не найден",404);
                 }
             }else{
-                //Исключение(контроллер не найден)
-
+                throw new \Exception("Контроллер $controller не найден", 404);
             }
-        }else{
 
-            //Исключение(404)
+        }else{
+           throw new \Exception("Страница не найдена", 404);
         }
 
     }
@@ -53,10 +57,20 @@ class Router extends ComponentAbctract
         }
         return false;
     }
+    protected static function removeQueryString($url){
+        if($url){
+            $params = explode('?',$url,2);
+            if(!strpos($params[0], '=')){
+                return rtrim($params[0],'/');
+            }return '';
+        }
+    }
+
     protected static function upperCamelCase($str){
+        //для контроллеров н-р page-new => PageNew
         return str_replace(" ", "", ucwords(str_replace("-", " ", $str)));
     }
     protected static function lowerCamelCase($str){
-        return lcfirst(self::upperCamelCase($str));
+        return lcfirst(self::upperCamelCase($str)); //для методов н-р view-new => viewNew
     }
 }
