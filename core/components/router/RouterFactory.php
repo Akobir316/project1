@@ -4,7 +4,13 @@
 namespace core\components\router;
 
 
-class RouterFactory
+use core\contracts\ComponentFactoryAbstract;
+
+class RouterFactory extends ComponentFactoryAbstract
 {
 
+    protected function createConcreteInstance()
+    {
+        return new Router();
+    }
 }

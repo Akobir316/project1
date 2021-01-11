@@ -1,12 +1,17 @@
 <?php
-use core\{Router,ErrorHandler};
+use core\components\router\RouterFactory;
+use core\components\exceptions\ErrorHandlerFactory;
+use core\components\logger\LogerFactory;
 return [
     'components'=>[
         'router'=>[
-            'class'=>Router::class
+            'factory'=>RouterFactory::class
         ],
-        'exceptions'=>[
-            'class'=>ErrorHandler::class
+//        'exceptions'=>[
+//            'factory'=>ErrorHandlerFactory::class
+//        ],
+        'loger'=>[
+            'factory'=>LogerFactory::class
         ]
     ]
 ];

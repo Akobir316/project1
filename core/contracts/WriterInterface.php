@@ -4,7 +4,7 @@
 namespace core\contracts;
 
 
-class WriterInterface
+interface WriterInterface
 {
-
+    public function write($logdata);
 }

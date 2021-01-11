@@ -4,7 +4,7 @@
 namespace core\contracts;
 
 
-class FormaterInterface
+interface FormaterInterface
 {
-
+   public function format($message, $context);
 }

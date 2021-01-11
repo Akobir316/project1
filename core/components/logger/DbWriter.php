@@ -4,7 +4,13 @@
 namespace core\components\logger;
 
 
-class DbWriter
+use core\contracts\WriterInterface;
+
+class DbWriter implements WriterInterface
 {
 
+    public function write($logdata)
+    {
+        //реализация запись в базу данных
+    }
 }

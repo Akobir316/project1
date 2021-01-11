@@ -1,7 +1,7 @@
 <?php
 
 
-namespace core;
+namespace core\components\router;
 use core\contracts\ComponentAbctract;
 
 
