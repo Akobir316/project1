@@ -7,3 +7,9 @@
 
 [2021-01-11 22:59:09] akosh
 =================
+[2021-01-11 23:04:59]1 Текст ошибки: Uncaught TypeError: Argument 1 passed to core\components\logger\ErrorHandler::exceptionHandler() must be an instance of Exception, instance of Error given in /home/akobir/www/project1.loc/core/components/logger/ErrorHandler.php:44
+Stack trace:
+#0 [internal function]: core\components\logger\ErrorHandler->exceptionHandler()
+#1 {main}
+  thrown | Файл: /home/akobir/www/project1.loc/core/components/logger/ErrorHandler.php | Строка: 44
+=================
