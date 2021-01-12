@@ -1,6 +1,5 @@
 <?php
 
-
 namespace core\components\logger;
 
 use Psr\Log\AbstractLogger;
@@ -15,12 +14,11 @@ class Logger extends AbstractLogger
         new ErrorHandler($this);
         $this->formater = $formater;
         $this->writer = $writer;
-
     }
 
     public function log($level, $message, array $context = array())
     {
-        $logdata = $this->formater->format($message,$context);
+        $logdata = $this->formater->format($level, $message, $context);
         $this->writer->write($logdata);
     }
 }

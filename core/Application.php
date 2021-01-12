@@ -33,7 +33,7 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
     }
     public function get($name)
     {
-        if(isset($this->instances[$name])) {
+        if (isset($this->instances[$name])) {
             return $this->instances[$name];
 
         }
@@ -44,7 +44,6 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
 
             return $instance;
         }
-
         return null;
     }
     public function has($name)
@@ -62,7 +61,7 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
         $this->bootstrap();
         $this->get('loger');
         $router = $this->get('router');
-        if ($action = $router->route()){
+        if ($action = $router->route()) {
             $action();
         }
     }

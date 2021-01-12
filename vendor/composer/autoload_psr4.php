@@ -10,5 +10,4 @@ return array(
     'app\\controllers\\' => array($baseDir . '/app/controllers'),
     'app\\' => array($baseDir . '/app'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
-    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
 );

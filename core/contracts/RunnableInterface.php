@@ -1,5 +1,8 @@
 <?php
+
 namespace core\contracts;
-interface RunnableInterface{
+
+interface RunnableInterface
+{
     public function run();
 }

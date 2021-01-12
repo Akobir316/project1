@@ -8,8 +8,9 @@ use core\Application;
 
 class MainController
 {
-    public function indexAction(){
-
+    public function indexAction()
+    {
         echo __METHOD__;
+
     }
 }

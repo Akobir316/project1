@@ -9,7 +9,8 @@ use core\Application;
 class PageController
 {
 
-    public function viewAction(){
-        self::test();
+    public function viewAction()
+    {
+        echo __METHOD__;
     }
 }

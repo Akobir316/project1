@@ -7,9 +7,6 @@ return [
         'router'=>[
             'factory'=>RouterFactory::class
         ],
-//        'exceptions'=>[
-//            'factory'=>ErrorHandlerFactory::class
-//        ],
         'loger'=>[
             'factory'=>LogerFactory::class
         ]
