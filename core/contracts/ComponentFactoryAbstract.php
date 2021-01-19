@@ -4,9 +4,9 @@ namespace core\contracts;
 
 abstract class ComponentFactoryAbstract
 {
-    public function createInstance()
+    public function createInstance($params = []): ComponentInterface
     {
-        return $this->createConcreteInstance();
+        return $this->createConcreteInstance($params);
     }
-    protected abstract function createConcreteInstance();
+    protected abstract function createConcreteInstance($params = []): ComponentInterface;
 }

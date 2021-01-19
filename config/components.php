@@ -1,14 +1,26 @@
 <?php
+
+use core\components\db\DbFactory;
 use core\components\router\RouterFactory;
-use core\components\exceptions\ErrorHandlerFactory;
-use core\components\logger\LogerFactory;
+
+use core\components\logger\LoggerFactory;
 return [
     'components'=>[
         'router'=>[
-            'factory'=>RouterFactory::class
+            'factory'=>RouterFactory::class,
+            'params'=>[]
         ],
         'loger'=>[
-            'factory'=>LogerFactory::class
+            'factory'=>LoggerFactory::class,
+            'params'=>[]
+        ],
+        'db' => [
+            'factory' => DbFactory::class,
+            'params' => [
+                'dsn' => 'test',
+                'user' => 'root',
+                'password' => 'hello'
+            ]
         ]
     ]
 ];

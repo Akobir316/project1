@@ -78,4 +78,8 @@ class Router extends ComponentAbctract
     {
         return lcfirst(self::upperCamelCase($str)); //для методов н-р view-new => viewNew
     }
+    public function bootstrap()
+    {
+
+    }
 }

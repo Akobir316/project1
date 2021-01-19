@@ -2,38 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e0c5bf6-f26c-46f1-859e-077688c46034" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/core/components/db/Db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/components/db/DbFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/components/db/QueryBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/components/db/QueryBuilderInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/contracts/ComponentInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/components.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/components.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/exceptions/ErrorHandler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/exceptions/ErrorHandlerFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/logger/ErrorHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/ErrorHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/components/logger/DbWriter.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/DbWriter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/components/logger/FileWriter.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/FileWriter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/components/logger/Formater.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/Formater.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/components/logger/LogerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/LoggerFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/components/logger/Logger.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/Logger.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/components/router/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/router/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/components/router/RouterFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/router/RouterFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/BootstrapInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/BootstrapInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/contracts/ComponentAbctract.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/ComponentAbctract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/contracts/ComponentFactoryAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/ComponentFactoryAbstract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/ContainerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/ContainerInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/FormaterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/FormaterInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/RunnableInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/RunnableInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/WriterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/WriterInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/contracts/FormaterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/FormaterInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/contracts/WriterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/WriterInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +66,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/components/logger" />
       <recent name="$PROJECT_DIR$/core/components/exceptions" />
       <recent name="$PROJECT_DIR$/core/components/router" />
-      <recent name="$PROJECT_DIR$/core/components/logger" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -101,7 +91,12 @@
       <workItem from="1610347520613" duration="319000" />
       <workItem from="1610355554043" duration="22212000" />
       <workItem from="1610390362880" duration="2093000" />
-      <workItem from="1610422798623" duration="3494000" />
+      <workItem from="1610422798623" duration="4308000" />
+      <workItem from="1610470890627" duration="2445000" />
+      <workItem from="1610533474349" duration="746000" />
+      <workItem from="1610724732015" duration="599000" />
+      <workItem from="1610942944083" duration="11533000" />
+      <workItem from="1611036722178" duration="4657000" />
     </task>
     <servers />
   </component>

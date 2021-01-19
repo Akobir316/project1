@@ -5,3 +5,19 @@
 
 [2021-01-12 09:42:22]debug:aaaaaa
 =================
+[2021-01-12 23:03:10] {Исключение} Текст ошибки: sddddd | Файл: /home/akobir/www/project1.loc/app/controllers/MainController.php | Строка: 13
+=================
+[2021-01-19 11:39:03] {Исключение} Текст ошибки: Страница не найдена | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 37
+=================
+[2021-01-19 11:39:22] {Исключение} Текст ошибки: Страница не найдена | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 37
+=================
+[2021-01-19 12:24:11] {Исключение} Текст ошибки: Call to undefined method core\components\logger\Logger::bootstrap() | Файл: /home/akobir/www/project1.loc/core/Application.php | Строка: 47
+=================
+[2021-01-19 12:31:51] {Исключение} Текст ошибки: Страница не найдена | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 37
+=================
+[2021-01-19 12:31:52] {Исключение} Текст ошибки: Страница не найдена | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 37
+=================
+[2021-01-19 12:34:07] {Исключение} Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 30
+=================
+[2021-01-19 12:34:39] {Исключение} Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 30
+=================

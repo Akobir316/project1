@@ -3,7 +3,7 @@
 namespace core\contracts;
 
 
-class ComponentAbctract implements BootstrapInterface
+class ComponentAbctract implements BootstrapInterface, ComponentInterface
 {
 
     public function bootstrap()

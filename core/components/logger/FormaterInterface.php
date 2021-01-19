@@ -1,6 +1,6 @@
 <?php
 
-namespace core\contracts;
+namespace core\components\logger;
 
 interface FormaterInterface
 {

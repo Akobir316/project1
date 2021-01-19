@@ -1,4 +1,5 @@
 <?php
+
 namespace core;
 
 use core\contracts\{BootstrapInterface,ContainerInterface,RunnableInterface};
@@ -20,13 +21,15 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
     protected function __construct($config = [])
     {
         $this->config = $config;
+        $this->bootstrap();
     }
     public function bootstrap()
     {
         if (!empty($this->config['components'])) {
-            foreach ($this->config['components'] as $k => $v) {
-                if (isset($v['factory']) && class_exists($v['factory'])) {
-                    $this->components[$k] = $v['factory'];
+
+            foreach ($this->config['components'] as $key => $item) {
+                if (isset($item['factory']) && class_exists($item['factory'])) {
+                    $this->components[$key] = $item;
                 }
             }
         }
@@ -38,8 +41,11 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
 
         }
         if (array_key_exists($name, $this->components)) {
-            $factory = new $this->components[$name];
-            $instance = $factory->createInstance();
+            $factory = new $this->components[$name]['factory'];
+            $params = $this->components[$name]['params'] ?? [];
+            $instance = $factory->createInstance($params);
+
+            $instance->bootstrap();
             $this->instances[$name] = $instance;
 
             return $instance;

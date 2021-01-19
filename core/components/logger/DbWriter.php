@@ -3,9 +3,6 @@
 
 namespace core\components\logger;
 
-
-use core\contracts\WriterInterface;
-
 class DbWriter implements WriterInterface
 {
 

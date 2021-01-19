@@ -3,7 +3,6 @@
 
 namespace core\components\logger;
 
-use core\contracts\FormaterInterface;
 
 class Formater implements FormaterInterface
 {
