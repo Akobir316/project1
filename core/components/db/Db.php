@@ -30,7 +30,8 @@ class Db implements ComponentInterface, BootstrapInterface
 
     public function query(string $sql)
     {
-        return $this->connection->query($sql);
+        $result = $this->connection->query($sql);
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function newBuilder(){

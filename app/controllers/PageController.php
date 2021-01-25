@@ -9,8 +9,9 @@ use core\Application;
 class PageController
 {
 
-    public function viewAction()
+    public function viewAction($id, $test)
     {
-        echo __METHOD__;
+        echo "id = {$id}<br>";
+        echo "test = {$test}";
     }
 }

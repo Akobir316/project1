@@ -12,20 +12,22 @@ class Router extends ComponentAbctract
     {
         self::$routes[$regexp] = $route;
     }
-    public static function route()
+    public function route()
     {
         $url = trim($_SERVER['REQUEST_URI'], '/');
         $url = self::removeQueryString($url);
         if (self::matchRoute($url)) {
             $controller = "app\controllers\\" . self::$route['controller'] . "Controller";
+
             if (class_exists($controller)) {
                 $controllerObj = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action']) . "Action";
+                $this->getController($controller, $action);
                 if (method_exists($controllerObj, $action)) {
-
-                    return function() use ($controllerObj, $action) {
-                        $controllerObj->$action();
-                    };
+                    return [
+                        'controller' => $controllerObj,
+                        'action' => $action
+                    ];
                 } else {
                     throw new \Exception("Метод $controller::$action не найден",404);
                 }
@@ -37,6 +39,12 @@ class Router extends ComponentAbctract
            throw new \Exception("Страница не найдена", 404);
         }
 
+    }
+    public function getController($controller, $action)
+    {
+        return [
+            "{$controller}" => "{$action}"
+        ];
     }
     public static function matchRoute($url)
     {

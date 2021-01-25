@@ -92,13 +92,15 @@ class QueryBuilder implements QueryBuilderInterface
 
     public function one(): ?array
     {
+        $this->limit = 1;
         $sql = $this->build();
-        return $this->db->query($sql)->fetch(PDO::FETCH_ASSOC);
+        $result = $this->db->query($sql);
+        return $result[0];
     }
 
     public function all(): ?array
     {
         $sql = $this->build();
-        return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        return $this->db->query($sql);
     }
 }

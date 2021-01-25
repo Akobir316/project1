@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e0c5bf6-f26c-46f1-859e-077688c46034" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/components/db/Db.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/components/db/DbFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/components/db/QueryBuilder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/components/db/QueryBuilderInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/contracts/ComponentInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Reflection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/components.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/components.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/logger/DbWriter.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/DbWriter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/logger/FileWriter.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/FileWriter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/logger/Formater.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/Formater.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/logger/LogerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/LoggerFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/logger/Logger.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/Logger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/components/db/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/db/Db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/components/db/QueryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/db/QueryBuilder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/components/router/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/router/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/components/router/RouterFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/router/RouterFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/ComponentAbctract.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/ComponentAbctract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/ComponentFactoryAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/contracts/ComponentFactoryAbstract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/FormaterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/FormaterInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/contracts/WriterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/components/logger/WriterInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/errors.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +53,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core" />
       <recent name="$PROJECT_DIR$/core/components/logger" />
       <recent name="$PROJECT_DIR$/core/components/exceptions" />
       <recent name="$PROJECT_DIR$/core/components/router" />
@@ -96,7 +84,12 @@
       <workItem from="1610533474349" duration="746000" />
       <workItem from="1610724732015" duration="599000" />
       <workItem from="1610942944083" duration="11533000" />
-      <workItem from="1611036722178" duration="4657000" />
+      <workItem from="1611036722178" duration="14506000" />
+      <workItem from="1611329448488" duration="4011000" />
+      <workItem from="1611543917385" duration="3164000" />
+      <workItem from="1611548018656" duration="3800000" />
+      <workItem from="1611566318239" duration="1220000" />
+      <workItem from="1611581167561" duration="435000" />
     </task>
     <servers />
   </component>

@@ -44,10 +44,8 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
             $factory = new $this->components[$name]['factory'];
             $params = $this->components[$name]['params'] ?? [];
             $instance = $factory->createInstance($params);
-
             $instance->bootstrap();
             $this->instances[$name] = $instance;
-
             return $instance;
         }
         return null;
@@ -62,13 +60,13 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
         }
         return false;
     }
+    use Reflection;
     public function run()
     {
         $this->bootstrap();
         $this->get('loger');
         $router = $this->get('router');
-        if ($action = $router->route()) {
-            $action();
-        }
+        $param = $router->route();
+        $this->reflectionMethod($param['controller'], $param['action']);
     }
 }
