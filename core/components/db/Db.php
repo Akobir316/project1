@@ -2,38 +2,80 @@
 
 
 namespace core\components\db;
-
+/**
+ * Class Db
+ * Класс для работы с базой данных
+ * @package core\components\db
+ */
 use core\contracts\BootstrapInterface;
 use core\contracts\ComponentInterface;
 
+
 class Db implements ComponentInterface, BootstrapInterface
 {
-    protected $dsn;
+    /**
+     * @var string Хост
+     */
+    protected $host;
 
+    /**
+     * @var string Пользователь
+     */
     protected $user;
 
+    /**
+     * @var string Пароль
+     */
     protected $password;
 
-    protected $connection;
+    /**
+     * @var string База данных
+     */
+    protected $db;
 
-    public function __construct($dsn, $user, $password)
+    private $connection;
+
+    /**
+     * Db constructor.
+     * @param $host
+     * @param $user
+     * @param $password
+     * @param $db
+     */
+    public function __construct($host, $user, $password, $db)
     {
-        $this->dsn = $dsn;
+        $this->host = $host;
         $this->user = $user;
         $this->password = $password;
+        $this->db = $db;
+        $this->connect();
     }
 
+    /**
+     * Метод для соединения базу данных
+     */
     public function connect()
     {
-        $this->connection = new \PDO($this->dsn, $this->user, $this->password);
+        $dsn = 'mysql:dbname=' . $this->db . ';host=' . $this->host;
+        $this->connection = new \PDO($dsn, $this->user, $this->password);
     }
 
+    /**
+     * Метод для отправки sql запроса
+     *
+     * @param string $sql
+     * @return array|null|false
+     */
     public function query(string $sql)
     {
         $result = $this->connection->query($sql);
         return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Метод для создание экземпляра QueryBuilder
+     * @return QueryBuilder
+     */
     public function newBuilder(){
         return new QueryBuilder($this);
     }

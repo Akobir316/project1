@@ -2,11 +2,21 @@
 
 
 namespace core\components\logger;
-
+/**
+ * Class Formater
+ * Класс для формитирования логов для записи
+ * @package core\components\logger
+ */
 
 class Formater implements FormaterInterface
 {
-
+    /**
+     * Метод форматирует лог для записи
+     * @param $level
+     * @param $message
+     * @param $context
+     * @return string
+     */
     public function format($level, $message, $context)
     {
         if (!empty($context)) {

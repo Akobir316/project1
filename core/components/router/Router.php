@@ -1,17 +1,38 @@
 <?php
 
 namespace core\components\router;
+/**
+ * Class Router
+ * Сервис, который занимается роутингом (маршрутизацией).
+ * @package core\components\router
+ */
 use core\contracts\ComponentAbctract;
+
 
 class Router extends ComponentAbctract
 {
+
     protected static $routes = [];
+
     protected static $route = [];
 
+    /**
+     * Добавляет роут
+     * @param $regexp
+     * @param array $route
+     */
     public static function add($regexp, $route = [])
     {
         self::$routes[$regexp] = $route;
     }
+
+    /**
+     * Данный метод определяет путь запроса, проверяет есть ли в настройках такой роут
+     * Возвращает ассоциацивный массив с объектом конкретного контроллера и с его методом
+     *
+     * @return array
+     * @throws \Exception
+     */
     public function route()
     {
         $url = trim($_SERVER['REQUEST_URI'], '/');
@@ -22,7 +43,6 @@ class Router extends ComponentAbctract
             if (class_exists($controller)) {
                 $controllerObj = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action']) . "Action";
-                $this->getController($controller, $action);
                 if (method_exists($controllerObj, $action)) {
                     return [
                         'controller' => $controllerObj,
@@ -40,12 +60,13 @@ class Router extends ComponentAbctract
         }
 
     }
-    public function getController($controller, $action)
-    {
-        return [
-            "{$controller}" => "{$action}"
-        ];
-    }
+
+    /**
+     * Провераят совпадение роута на заданный шаблон(регулярные выражения)
+     *
+     * @param $url
+     * @return bool
+     */
     public static function matchRoute($url)
     {
         foreach (self::$routes as $pattern => $route) {
@@ -66,6 +87,13 @@ class Router extends ComponentAbctract
         }
         return false;
     }
+
+    /**
+     * Метод который вырезает со строки запроса get запросы
+     *
+     * @param $url
+     * @return string
+     */
     protected static function removeQueryString($url)
     {
         if ($url) {
@@ -77,11 +105,24 @@ class Router extends ComponentAbctract
         }
     }
 
+    /**
+     * Форматирование имени контроллера
+     *
+     * @param $str
+     * @return string|string[]
+     */
     protected static function upperCamelCase($str)
     {
         //для контроллеров н-р page-new => PageNew
         return str_replace(" ", "", ucwords(str_replace("-", " ", $str)));
     }
+
+    /**
+     * Форматирование имени метода контроллера
+     *
+     * @param $str
+     * @return string
+     */
     protected static function lowerCamelCase($str)
     {
         return lcfirst(self::upperCamelCase($str)); //для методов н-р view-new => viewNew

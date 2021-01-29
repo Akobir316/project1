@@ -1,19 +1,48 @@
 <?php
 
 namespace core\components\db;
-
+/**
+ * Class QueryBuilder
+ * @package core\components\db
+ */
 use PDO;
+
 
 class QueryBuilder implements QueryBuilderInterface
 {
+    /**
+     * @var Db
+     */
     protected $db;
+    /**
+     * @var
+     */
     protected $select;
+    /**
+     * @var
+     */
     protected $table;
+    /**
+     * @var array|string
+     */
     protected $where;
+    /**
+     * @var
+     */
     protected $order;
+    /**
+     * @var
+     */
     protected $limit;
+    /**
+     * @var
+     */
     protected $offset;
 
+    /**
+     * QueryBuilder constructor.
+     * @param Db $db
+     */
     public function __construct(Db $db)
     {
         $this->db = $db;
@@ -55,6 +84,11 @@ class QueryBuilder implements QueryBuilderInterface
         return $this;
     }
 
+    /**
+     * Собирает SQL строку
+     * @return string
+     * @throws \Exception
+     */
     public function build(): string
     {
         $sql = 'SELECT ';
@@ -90,6 +124,11 @@ class QueryBuilder implements QueryBuilderInterface
         } throw new \Exception('Не введена таблица', 500);
     }
 
+    /**
+     * Собирает строку запроса, получает и возвращает одну запись из базы данных
+     * @return array|null
+     * @throws \Exception
+     */
     public function one(): ?array
     {
         $this->limit = 1;
@@ -97,7 +136,12 @@ class QueryBuilder implements QueryBuilderInterface
         $result = $this->db->query($sql);
         return $result[0];
     }
-
+    /**
+     * Собирает строку запроса, получает и возвращает коллекцию записей из базы данных
+     *
+     * @return array|null
+     * @throws \Exception
+     */
     public function all(): ?array
     {
         $sql = $this->build();

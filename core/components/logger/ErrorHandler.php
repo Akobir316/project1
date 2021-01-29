@@ -1,15 +1,30 @@
 <?php
 
-
 namespace core\components\logger;
-
+/**
+ * Class ErrorHandler
+ * Класс для обработки ошибок
+ * @package core\components\logger
+ */
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
+
 class ErrorHandler
 {
+    /**
+     * @var LoggerInterface
+     */
     private $logger;
+    /**
+     * @var array Массив констант фатальных ошибок
+     */
     private static $fatalErrors = [ E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR ];
+
+    /**
+     * ErrorHandler constructor.
+     * @param LoggerInterface $logger
+     */
     public function __construct(LoggerInterface $logger)
     {
         if (MODE) {
@@ -23,6 +38,14 @@ class ErrorHandler
         register_shutdown_function([$this, 'fatalErrors']);
         set_exception_handler([$this, 'exceptionHandler']);
     }
+
+    /**
+     * Метод для перехвата не фатальных ошибок
+     * @param $errnum
+     * @param $errstr
+     * @param $errfile
+     * @param $errline
+     */
     public function errorHandler($errnum, $errstr, $errfile, $errline)
     {
         if (error_reporting() & $errnum) {
@@ -31,6 +54,10 @@ class ErrorHandler
            $this->displayError(ucfirst($levels[$errnum]) . "[{$errnum}]", $errstr, $errfile, $errline);
         }
     }
+
+    /**
+     * Метод для перехвата фатальных ошибок
+     */
     public function fatalErrors()
     {
         $error = error_get_last();
@@ -43,6 +70,11 @@ class ErrorHandler
             ob_end_flush();
         }
     }
+
+    /**
+     * Метод для перехвата исключений
+     * @param \Throwable $e
+     */
     public function exceptionHandler(\Throwable $e)
     {
         $level = LogLevel::ALERT;
@@ -50,6 +82,9 @@ class ErrorHandler
         $this->displayError($level . '(Исключение)', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
     }
 
+    /**
+     * @return array
+     */
     protected function defaultErrorLevel(): array
     {
         return [
@@ -70,6 +105,15 @@ class ErrorHandler
             E_USER_DEPRECATED   => LogLevel::NOTICE,
         ];
     }
+
+    /**
+     * Метод для показа ошибок
+     * @param $errnum
+     * @param $errstr
+     * @param $errfile
+     * @param $errline
+     * @param int $responce
+     */
     protected function displayError($errnum, $errstr, $errfile, $errline, $responce = 500)
     {
         http_response_code($responce);

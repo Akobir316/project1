@@ -166,3 +166,11 @@
 =================
 [2021-01-25 18:34:43] {Исключение} Текст ошибки: Too few arguments to function app\controllers\PageController::viewAction(), 0 passed and exactly 2 expected | Файл: /home/akobir/www/project1.loc/app/controllers/PageController.php | Строка: 12
 =================
+[2021-01-26 12:31:26] {Исключение} Текст ошибки: Too few arguments to function app\controllers\PageController::viewAction(), 0 passed and exactly 2 expected | Файл: /home/akobir/www/project1.loc/app/controllers/PageController.php | Строка: 12
+=================
+[2021-01-27 14:12:21] {Исключение} Текст ошибки: Страница не найдена | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 39
+=================
+[2021-01-27 14:12:42] {Исключение} Текст ошибки: Too few arguments to function app\controllers\PageController::viewAction(), 0 passed and exactly 2 expected | Файл: /home/akobir/www/project1.loc/app/controllers/PageController.php | Строка: 12
+=================
+[2021-01-29 10:19:06] {Исключение} Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: /home/akobir/www/project1.loc/core/components/router/Router.php | Строка: 51
+=================
