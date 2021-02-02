@@ -2,7 +2,6 @@
 
 use core\components\db\DbFactory;
 use core\components\router\RouterFactory;
-
 use core\components\logger\LoggerFactory;
 return [
     'components'=>[
@@ -10,16 +9,17 @@ return [
             'factory'=>RouterFactory::class,
             'params'=>[]
         ],
-        'loger'=>[
+        'logger'=>[
             'factory'=>LoggerFactory::class,
             'params'=>[]
         ],
         'db' => [
             'factory' => DbFactory::class,
             'params' => [
-                'dsn' => 'test',
+                'host' => 'localhost',
                 'user' => 'root',
-                'password' => 'hello'
+                'password' => '123321',
+                'db' => 'example'
             ]
         ]
     ]

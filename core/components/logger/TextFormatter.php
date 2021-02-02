@@ -3,12 +3,12 @@
 
 namespace core\components\logger;
 /**
- * Class Formater
+ * Class TextFormater
  * Класс для формитирования логов для записи
  * @package core\components\logger
  */
 
-class Formater implements FormaterInterface
+class TextFormater implements FormaterInterface
 {
     /**
      * Метод форматирует лог для записи
@@ -19,7 +19,10 @@ class Formater implements FormaterInterface
      */
     public function format($level, $message, $context)
     {
-        if (!empty($context)) {
+        $line = '[' . date('Y-m-d H:i:s') . ']' . $level . ': ' . $message . ': ' . json_encode($context) . '\n=================\n';
+        return $line;
+
+        /*        if (!empty($context)) {
             if (array_key_exists('exception', $context)) {
                  $e = $context['exception'];
                  $line = "[" . date('Y-m-d H:i:s') . "] {Исключение} Текст ошибки: {$e->getMessage()} | Файл: {$e->getFile()} | Строка: {$e->getLine()}\n=================\n";
@@ -29,6 +32,6 @@ class Formater implements FormaterInterface
             return $line;
         }
         $line = "[" . date('Y-m-d H:i:s') . "]{$level}" . " : " . "{$message}\n=================\n";
-        return $line;
+        return $line;*/
     }
 }

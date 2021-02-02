@@ -4,7 +4,7 @@
 namespace core\components\logger;
 
 
-class ErrorHandler
+class HttpExceptions 
 {
 
 }

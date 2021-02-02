@@ -1,6 +1,7 @@
 <?php
 
 namespace core;
+use core\components\logger\Error7;
 use core\contracts\BootstrapInterface;
 use core\contracts\ContainerInterface;
 use core\contracts\RunnableInterface;
@@ -129,10 +130,12 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
      */
     public function run()
     {
+
         $this->bootstrap();
-        $this->get('loger');
+        $this->get('logger');
         $router = $this->get('router');
         $param = $router->route();
         $this->reflectionMethod($param['controller'], $param['action']);
+
     }
 }
