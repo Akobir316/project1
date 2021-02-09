@@ -1,7 +1,9 @@
 <?php
 
 namespace core;
-use core\components\logger\Error7;
+
+use core\components\logger\ErrorHandler;
+use core\components\logger\NotFoundException;
 use core\contracts\BootstrapInterface;
 use core\contracts\ContainerInterface;
 use core\contracts\RunnableInterface;
@@ -65,6 +67,7 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
 
     protected function __construct($config = [])
     {
+
         $this->config = $config;
         $this->bootstrap();
     }
@@ -125,17 +128,27 @@ class Application implements BootstrapInterface, ContainerInterface,RunnableInte
 
     // Подключаем трейт Reflection
     use Reflection;
+
     /**
      * Метод для запуска приложения
+     * @throws \ReflectionException
      */
     public function run()
     {
+        try {
+            $this->bootstrap();
+            $logger = $this->get('logger');
+            $router = $this->get('router');
+            $param = $router->route();
+            $this->reflectionMethod($param['controller'], $param['action']);
 
-        $this->bootstrap();
-        $this->get('logger');
-        $router = $this->get('router');
-        $param = $router->route();
-        $this->reflectionMethod($param['controller'], $param['action']);
+        } catch (NotFoundException $e){
+            $message = 'Исключение: '.$e->getMessage().': '.$e->getFile().': '.$e->getLine();
+            $logger->alert($message);
+            echo $message;
+
+        }
+
 
     }
 }

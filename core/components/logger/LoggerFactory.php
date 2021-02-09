@@ -18,6 +18,8 @@ class LoggerFactory extends ComponentFactoryAbstract
      */
     protected function createConcreteInstance($params = []): ComponentInterface
     {
-        return new Logger(new Formater(), new FileWriter());
+        $formatter = new TextFormatter();
+        $writer = new FileWriter($params['logFile']);
+        return new Logger($formatter, $writer);
     }
 }

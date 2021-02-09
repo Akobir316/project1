@@ -10,9 +10,9 @@ class DbWriter implements WriterInterface
 {
     /**
      * Метод для записи в базу данных
-     * @param $logdata
+     * @param $message
      */
-    public function write($logdata)
+    public function write($message)
     {
         //реализация запись в базу данных
     }

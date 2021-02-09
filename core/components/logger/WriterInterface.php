@@ -7,5 +7,5 @@ namespace core\components\logger;
  */
 interface WriterInterface
 {
-    public function write($logdata);
+    public function write($message);
 }

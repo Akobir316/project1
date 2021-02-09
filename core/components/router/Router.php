@@ -6,6 +6,8 @@ namespace core\components\router;
  * Сервис, который занимается роутингом (маршрутизацией).
  * @package core\components\router
  */
+
+use core\components\logger\NotFoundException;
 use core\contracts\ComponentAbctract;
 
 
@@ -49,14 +51,14 @@ class Router extends ComponentAbctract
                         'action' => $action
                     ];
                 } else {
-                    throw new \Exception("Метод $controller::$action не найден",404);
+                    throw new NotFoundException("Метод $controller::$action не найден");
                 }
             } else {
-                throw new \Exception("Контроллер $controller не найден", 404);
+                throw new NotFoundException("Контроллер $controller не найден");
             }
 
         } else {
-           throw new \Exception("Страница не найдена", 404);
+           throw new NotFoundException("Страница не найдена");
         }
 
     }

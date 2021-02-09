@@ -11,7 +11,9 @@ return [
         ],
         'logger'=>[
             'factory'=>LoggerFactory::class,
-            'params'=>[]
+            'params' => [
+                'logFile' => ROOT. '/tmp/log.txt',
+            ]
         ],
         'db' => [
             'factory' => DbFactory::class,

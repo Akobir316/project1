@@ -15,7 +15,7 @@ class Logger extends AbstractLogger implements ComponentInterface
     /**
      * @var FormaterInterface Обьект, который умеет определенным образом форматировать логи
      */
-    protected $formater;
+    protected $formatter;
     /**
      * @var WriterInterface Обьект, который умеет писать логи в определенное хранилище
      */
@@ -23,14 +23,14 @@ class Logger extends AbstractLogger implements ComponentInterface
 
     /**
      * Logger constructor.
-     * @param Formater $formater
+     * @param FormaterInterface $formatter
      * @param WriterInterface $writer
      */
-    public function __construct(Formater $formater, WriterInterface $writer)
+    public function __construct(FormaterInterface $formatter, WriterInterface $writer)
     {
         //Можно автоматически логировать все ошибки
         new ErrorHandler($this);
-        $this->formater = $formater;
+        $this->formatter = $formatter;
         $this->writer = $writer;
     }
 
@@ -41,8 +41,9 @@ class Logger extends AbstractLogger implements ComponentInterface
      */
     public function log($level, $message, array $context = array())
     {
-        $logdata = $this->formater->format($level, $message, $context);
-        $this->writer->write($logdata);
+
+        $log_message = $this->formatter->format($level, $message, $context);
+        $this->writer->write($log_message);
     }
     public function bootstrap()
     {

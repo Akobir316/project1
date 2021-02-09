@@ -9,13 +9,20 @@ namespace core\components\logger;
 
 class FileWriter implements WriterInterface
 {
+
+    protected $logFile;
+
+    public function __construct($logFile)
+    {
+        $this->logFile = $logFile;
+    }
     /**
      * Метод для записи в файл
-     * @param $logdata
+     * @param $message
      */
-    public function write($logdata)
+    public function write($message)
     {
-        $file = ROOT . '/tmp/errors.log';
-        file_put_contents($file, $logdata, FILE_APPEND | LOCK_EX);
+
+        file_put_contents($this->logFile, $message, FILE_APPEND | LOCK_EX);
     }
 }
